@@ -1,0 +1,23 @@
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Список задач</title>
+</head>
+<body>
+
+<div th:each="task : ${tasks}">
+
+  <div style="border: 1px dashed #000000; padding: 10px">
+    id = <span th:text="${task.taskId}"></span>
+    category = <span th:text="${task.taskCategory}"></span><br>
+    title = <span th:text="${task.taskTitle}"></span><br>
+    desc = <span th:text="${task.taskDescription}"></span><br>
+    time = <span th:text="${task.taskUploadTime}"></span><br>
+    is take = <span th:text="${task.worked}"></span><br>
+  </div>
+
+</div>
+
+</body>
+</html>

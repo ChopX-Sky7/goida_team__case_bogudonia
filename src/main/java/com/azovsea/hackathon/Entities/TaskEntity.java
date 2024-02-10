@@ -22,7 +22,7 @@ public class TaskEntity {
     private String taskCategory;
     @Column(columnDefinition = "text")
     private String attachmentLink;
-    private boolean isTaked;
+    private boolean worked;
 
     public void setTaskUploadTime(){this.taskUploadTime = new SimpleDateFormat("_dd.MM.yyyy_H.mm").format(new Date());}
 
