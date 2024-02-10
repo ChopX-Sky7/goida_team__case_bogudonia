@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Загрузка обращения</title>
+</head>
+<body>
+<form method="post"
+      th:object="${taskBody}"
+      th:action="@{/upload}"
+      enctype="multipart/form-data">
+  <br><br>
+  <input type="text" th:field="*{taskTitle}" placeholder="title">
+  <input type="text" th:field="*{taskDescription}" placeholder="desc">
+  <select th:field="*{taskCategory}">
+    <option value="eco">eco</option>
+    <option value="urban">urban</option>
+  </select>
+  <input type="file" name="file">
+  <button type="submit">Отправить</button>
+</form>
+</body>
+</html>
