@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список новостей</title>
+</head>
+<body>
+
+<div th:each="post : ${newsList}">
+
+    <div style="border: 1px dashed #000000; padding: 10px">
+        id = <span th:text="${post.newsId}"></span>
+        title = <span th:text="${post.newsTitle}"></span><br>
+        desc = <span th:text="${post.newsDescription}"></span><br>
+        upload = <span th:text="${post.newsUploadTime}"></span><br>
+        tag = <span th:text="${post.newsTag}"></span><br>
+        moderated = <span th:text="${post.moderated}"></span><br>
+        <form th:action="@{/newslist/moder/{id}(id = ${post.newsId})}" method="post">
+            <input type="submit" value="moderated">
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

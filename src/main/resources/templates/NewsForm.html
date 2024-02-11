@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Загрузка новости</title>
+</head>
+<body>
+<form method="post"
+      th:object="${newsBody}"
+      th:action="@{/news/add}"
+      style="border: 1px dashed #000000"
+      enctype="multipart/form-data">
+  <br><br>
+  <input type="text" th:field="*{newsTitle}" placeholder="title"><br><br>
+  <input type="text" th:field="*{newsDescription}" placeholder="desc"><br><br>
+  <select th:field="*{newsTag}">
+    <option value="eco">eco</option>
+    <option value="urban">urban</option>
+  </select><br><br>
+  <input type="file" name="file"><br><br>
+  <button type="submit">Отправить</button>
+</form>
+</body>
+</html>
