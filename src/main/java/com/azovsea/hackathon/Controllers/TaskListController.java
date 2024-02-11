@@ -37,7 +37,7 @@ public class TaskListController {
     @PostMapping("take/{id}")
     public String takeTask(@PathVariable Long id){
         service.changeTaskStatus(id);
-        return "TaskList";
+        return "Home";
     }
 
 

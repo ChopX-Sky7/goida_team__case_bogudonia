@@ -36,7 +36,7 @@ public class NewsListController {
     @PostMapping("/moder/{id}")
     public String moderPost(@PathVariable Long id){
         service.changeStatus(id, true);
-        return "NewsList";
+        return "Home";
     }
 
     @GetMapping("/moderated")

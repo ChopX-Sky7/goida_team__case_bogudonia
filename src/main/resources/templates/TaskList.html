@@ -9,13 +9,13 @@
 
 <div th:each="task : ${tasks}">
 
-  <div style="border: 1px dashed #FFFFFF; background-color: #0E0F1C; padding: 10px">
-    id = <span th:text="${task.taskId}"></span>
-    Категория = <span th:text="${task.taskCategory}"></span><br>
-    Заголовок = <span th:text="${task.taskTitle}"></span><br>
-    Описание = <span th:text="${task.taskDescription}"></span><br>
-    Добавлено в = <span th:text="${task.taskUploadTime}"></span><br>
-    В работе = <span th:text="${task.worked}"></span><br>
+  <div style="border: 1px dashed #FFFFFF; background-color: #393c5d; padding: 10px">
+    id = <span style="color: #FFFFFF" th:text="${task.taskId}"></span>
+    Категория = <span style="color: #FFFFFF"  th:text="${task.taskCategory}"></span><br>
+    Заголовок = <span style="color: #FFFFFF"  th:text="${task.taskTitle}"></span><br>
+    Описание = <span style="color: #FFFFFF"  th:text="${task.taskDescription}"></span><br>
+    Добавлено в = <span style="color: #FFFFFF"  th:text="${task.taskUploadTime}"></span><br>
+    В работе = <span style="color: #FFFFFF" th:text="${task.worked}"></span><br>
     <form th:action="@{/list/take/{id}(id = ${task.taskId})}" method="post">
       <input type="submit" value="Взять в работу">
     </form>

@@ -43,7 +43,7 @@ public class TaskUploadController {
         return "TaskUpload";
     }
 
-    @PostMapping("/upload")
+    @PostMapping()
     public String uploadFile(@RequestParam("file") MultipartFile file,
                              @ModelAttribute("taskBody") TaskEntity task) {
         task.setTaskUploadTime();
@@ -64,7 +64,7 @@ public class TaskUploadController {
             e.printStackTrace();
         }
 
-        return "redirect:/";
+        return "Home";
     }
 
 }

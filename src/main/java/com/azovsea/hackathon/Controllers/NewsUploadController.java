@@ -60,7 +60,7 @@ public class NewsUploadController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "redirect:/list";
+        return "Home";
     }
 
 }
