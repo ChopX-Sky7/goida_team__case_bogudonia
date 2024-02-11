@@ -9,11 +9,11 @@
 <form method="post"
       th:object="${newsBody}"
       th:action="@{/news/add}"
-      style="border: 1px dashed #000000"
+      style="border: 1px dashed #000000; background-color: #0E0F1C"
       enctype="multipart/form-data">
   <br><br>
-  <input type="text" th:field="*{newsTitle}" placeholder="title"><br><br>
-  <input type="text" th:field="*{newsDescription}" placeholder="desc"><br><br>
+  <input type="text" th:field="*{newsTitle}" placeholder="Заголовок новости"><br><br>
+  <input type="text" th:field="*{newsDescription}" placeholder="Основной текст"><br><br>
   <select th:field="*{newsTag}">
     <option value="eco">eco</option>
     <option value="urban">urban</option>

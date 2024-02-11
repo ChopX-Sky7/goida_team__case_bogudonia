@@ -9,13 +9,13 @@
 
 <div th:each="post : ${newsList}">
 
-    <div style="border: 1px dashed #000000; padding: 10px">
+    <div style="border: 1px dashed #FFFFFF; background-color: #0E0F1C; padding: 10px">
         id = <span th:text="${post.newsId}"></span>
-        title = <span th:text="${post.newsTitle}"></span><br>
-        desc = <span th:text="${post.newsDescription}"></span><br>
-        upload = <span th:text="${post.newsUploadTime}"></span><br>
-        tag = <span th:text="${post.newsTag}"></span><br>
-        moderated = <span th:text="${post.moderated}"></span><br>
+        Заголовок = <span th:text="${post.newsTitle}"></span><br>
+        Описание = <span th:text="${post.newsDescription}"></span><br>
+        Загружено в = <span th:text="${post.newsUploadTime}"></span><br>
+        Тег = <span th:text="${post.newsTag}"></span><br>
+        Модерация: = <span th:text="${post.moderated}"></span><br>
         <form th:action="@{/newslist/moder/{id}(id = ${post.newsId})}" method="post">
             <input type="submit" value="moderated">
         </form>

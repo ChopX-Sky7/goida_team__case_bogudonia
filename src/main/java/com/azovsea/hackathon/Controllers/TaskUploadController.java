@@ -37,7 +37,7 @@ public class TaskUploadController {
     private TaskEntity task(){return new TaskEntity();}
 
 
-    @GetMapping("/")
+    @GetMapping()
     public String showTaskForm(Model model) {
         model.addAttribute("taskBody", task());
         return "TaskUpload";
@@ -46,11 +46,8 @@ public class TaskUploadController {
     @PostMapping("/upload")
     public String uploadFile(@RequestParam("file") MultipartFile file,
                              @ModelAttribute("taskBody") TaskEntity task) {
-
         task.setTaskUploadTime();
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-
-
         // Сохранение файла
         try {
             Path path = Paths.get(UPLOAD_DIR + task.getTaskUploadTime() + fileName);
