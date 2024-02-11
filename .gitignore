@@ -28,12 +28,5 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-
-*.properties
-*.xml
-*.jar
-*.cmd
-*.class
-
 ### VS Code ###
 .vscode/
