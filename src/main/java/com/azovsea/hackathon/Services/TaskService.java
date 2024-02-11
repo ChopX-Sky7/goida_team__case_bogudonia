@@ -9,7 +9,7 @@ public interface TaskService {
                      String title,
                      String desc,
                      String category);
-    void changeTaskStatus(TaskEntity task);
+    void changeTaskStatus(Long id);
 
 
 }

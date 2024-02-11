@@ -1,14 +1,13 @@
 package com.azovsea.hackathon.Controllers;
 
+
 import com.azovsea.hackathon.Entities.TaskEntity;
 import com.azovsea.hackathon.Repos.TaskRepository;
+import com.azovsea.hackathon.Services.Impl.TaskServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,10 +16,13 @@ import java.util.List;
 public class TaskListController {
 
     private final TaskRepository repository;
+    private final TaskServiceImpl service;
 
     @Autowired
-    public TaskListController(TaskRepository repository) {
+    public TaskListController(TaskRepository repository,
+                              TaskServiceImpl service) {
         this.repository = repository;
+        this.service = service;
     }
 
     @ModelAttribute(name = "tasks")
@@ -32,9 +34,15 @@ public class TaskListController {
         return "TaskList";
     }
 
-    @PostMapping
-    public String takeTask(){
-        return "redirect:/TaskList";
+    @PostMapping("take/{id}")
+    public String takeTask(@PathVariable Long id){
+        service.changeTaskStatus(id);
+        return "TaskList";
     }
+
+
+
+
+
 
 }

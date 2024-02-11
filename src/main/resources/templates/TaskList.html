@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ru"
       xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -15,6 +16,9 @@
     desc = <span th:text="${task.taskDescription}"></span><br>
     time = <span th:text="${task.taskUploadTime}"></span><br>
     is take = <span th:text="${task.worked}"></span><br>
+    <form th:action="@{/list/take/{id}(id = ${task.taskId})}" method="post">
+      <input type="submit" value="take in work">
+    </form>
   </div>
 
 </div>
